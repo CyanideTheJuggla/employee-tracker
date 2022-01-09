@@ -1,0 +1,236 @@
+{
+    "menuQuestions": 
+    {
+        "type": "list",
+        "name": "root",
+        "message": "What would you like to do?",
+        "choices": [
+            "View Employees", 
+            "Add Employee", 
+            "View Departments", 
+            "Add Department",
+            "View All Roles", 
+            "Add Role",
+            "Quit"
+        ]
+    },
+    "employeeView": 
+    {
+        "type": "list",
+        "name": "employeeView",
+        "message": "Employee View Options:",
+        "choices": [
+            "View All Employees", 
+            "View Employees by Manager",
+            "View Employees by Department",
+            "View Employees by Role",
+            "Return -> Go To root"
+        ],
+        "when": "" 
+    },
+    "employeeOptions" :
+    {
+        "type": "list",
+        "name": "employeeOptions",
+        "message": "Employee Record Options:",
+        "choices": [
+            "Add New Employee", 
+            "Edit Employee", 
+            "Remove Employee", 
+            "Return -> Go To root"
+        ],
+        "when": "" 
+    },
+    "departmentView": 
+    {
+        "type": "list",
+        "name": "departmentViewOptions",
+        "message": "Department View Options:",
+        "choices": [
+            "View All Departments", 
+            "View Departments by Manager",
+            "View Departments by Budget",
+            "View Departments by Number of Employees",
+            "Return -> Go To root"
+        ],
+        "when": "" 
+    },
+    "departmentOptions":
+    {
+        "type": "list",
+        "name": "departmentOptions",
+        "message": "Department Record Options:",
+        "choices": [
+            "Add New Department", 
+            "Edit Department", 
+            "Remove Department", 
+            "Return -> Go To root"
+        ],
+        "when": "" 
+    },
+    "roleOptions": 
+    {
+        "type": "list",
+        "name": "roleOptions",
+        "message": "Role Record Options:",
+        "choices": [
+            "Add New Role", 
+            "Edit Role", 
+            "Remove Role", 
+            "Return -> Go To root"
+        ],
+        "when": "" 
+    },
+    "addRole": [
+        {
+            "type": "input",
+            "name": "addRoleTitle",
+            "message": "Add Role -> Title:",
+            "when": "" 
+        },
+        {
+            "type": "input",
+            "name": "addRoleSalary",
+            "message": "Add Role -> Salary:",
+            "when": "" 
+        },
+        {
+            "type": "list",
+            "name": "addRoleDepartmentId",
+            "message": "Add Role -> Department:",
+            "choices": [],
+            "when": "" 
+        }
+    ],
+    "editRole": [
+        {
+            "type": "input",
+            "name": "editRoleTitle",
+            "message": "Edit Role -> Title:",
+            "when": "" 
+        },
+        {
+            "type": "input",
+            "name": "editRoleSalary",
+            "message": "Edit Role -> Salary:",
+            "when": "" 
+        },
+        {
+            "type": "input",
+            "name": "editRoleDepartmentId",
+            "message": "Edit Role -> Department ID:",
+            "when": "" 
+        }
+    ],
+    "removeRole": [
+        {
+            "type": "list",
+            "name": "removeRoleVerify",
+            "message": "Remove this role? \n **WARNING: THIS WILL REMOVE ANY EMPLOYEES WITH THIS ROLE**",
+            "choices": [
+                "Yes, delete this role and all employees with this role. ", 
+                "No, return to root menu."
+            ],
+            "when": "" 
+        }
+    ],
+    "addDepartment": [
+        {
+            "type": "input",
+            "name": "addDepartmentTitle",
+            "message": "Add Department -> Name:",
+            "when": "" 
+        }
+    ],
+    "editDepartment": [
+        {
+            "type": "input",
+            "name": "editDepartmentTitle",
+            "message": "Edit Department -> Name:",
+            "when": "" 
+        }
+    ],
+    "removeDepartment": [
+        {
+            "type": "list",
+            "name": "removeDepartmentVerify",
+            "message": "Remove this department? \n **WARNING: THIS WILL REMOVE ANY EMPLOYEES WITHIN THIS DEPARTMENT**",
+            "choices": [
+                "Yes, delete this department and all employees within this department. ", 
+                "No, return to root menu."
+            ],
+            "when": "" 
+        }
+    ],
+    "addEmployee": [
+        {
+            "type": "input",
+            "name": "addEmployeeFirstName",
+            "message": "Add Employee -> First Name:",
+            "when": "" 
+        },
+        {
+            "type": "input",
+            "name": "addEmployeeLastName",
+            "message": "Add Employee -> Last Name:",
+            "when": "" 
+        },
+        {
+            "type": "list",
+            "name": "addEmployeeRole",
+            "message": "Add Employee -> Select Role:",
+            "choices": [],
+            "when": "" 
+        },
+        {
+            "type": "list",
+            "name": "addEmployeeManager",
+            "message": "Add Employee -> Select Manager:",
+            "choices": [
+                "None",
+                "Department Manager"
+            ],
+            "when": "" 
+        }
+    ],
+    "editEmployee": [
+        {
+            "type": "input",
+            "name": "editEmployeeFirstName",
+            "message": "Edit Employee -> First Name:",
+            "when": "" 
+        },
+        {
+            "type": "input",
+            "name": "editEmployeeLastName",
+            "message": "Edit Employee -> Last Name:",
+            "when": "" 
+        },
+        {
+            "type": "list",
+            "name": "editEmployeeRole",
+            "message": "Edit Employee -> Select Role:",
+            "choices": [],
+            "when": "" 
+        },
+        {
+            "type": "list",
+            "name": "editEmployeeManager",
+            "message": "Edit Employee -> Select Manager:",
+            "choices": [],
+            "when": "" 
+        }
+    ],
+    "removeEmployee": [
+        {
+            "type": "list",
+            "name": "removeEmployeeVerify",
+            "message": "Remove this Employee? \n **WARNING: THIS WILL ERASE ALL RECORDS OF THIS EMPLOYEE**",
+            "choices": [
+                "Yes, erase this Employee from the system. ", 
+                "No, return to root menu."
+            ],
+            "when": "" 
+        }
+    ]
+}
