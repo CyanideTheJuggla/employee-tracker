@@ -44,7 +44,9 @@ class Inquire {
                     answers.addEmployeeManager = null;
                 } else {
                     //Util.Log('addEmployee[2].choices.indexOf(answers.addEmployeeRole) + 1', addEmployee[2].choices.indexOf(answers.addEmployeeRole) + 1);
-                    answers.addEmployeeManager = addEmployee[2].choices.indexOf(answers.addEmployeeRole) + 1;
+                    answers.addEmployeeManager = (addEmployee[2].choices.indexOf(answers.addEmployeeRole) / 2) + 1;
+                    if(addEmployee[2].choices.indexOf(answers.addEmployeeRole) % 2 > 0) answers.addEmployeeManager += 0.5;
+                    answers.addEmployeeManager -= 1;
                 }
                 answers.addEmployeeRole = addEmployee[2].choices.indexOf(answers.addEmployeeRole) + 1;
                 this.db.EmployeeAdd(answers);

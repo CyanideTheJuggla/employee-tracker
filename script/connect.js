@@ -217,8 +217,7 @@ JOIN
             FROM employee e
             INNER JOIN roles r ON r.id = e.role_id
             INNER JOIN department d on d.id = r.department_id
-            LEFT JOIN employee m ON m.id = e.manager_id
-            ${ (filter) ? `ORDER BY ${filter};` : `;` }`
+            LEFT JOIN employee m ON m.id = e.manager_id;`
         //Util.Log('queryString', queryString);
         this.#connection.query(
             queryString,
@@ -235,8 +234,8 @@ JOIN
     }
 
     EmployeeAdd(values){
-        //Util.Log('values.addEmployeeManager', values.addEmployeeManager);
-        if(values.addEmployeeManager != null || values.addEmployeeManager != undefined){
+        Util.Log('values', values);
+        if(values.addEmployeeManager != null && values.addEmployeeManager != undefined){
             const managerQuery = `
                 SELECT 
                     d.id AS department_id,
@@ -254,7 +253,7 @@ JOIN
             this.#connection.query(
                 managerQuery,
                 (err, results, fields)=> {
-                    //Util.Log('results', results);
+                    Util.Log('results', results);
                     //Util.Log('err', err);
                     values.addEmployeeManager = results[0].employee_id;
                     //Util.Log('values', values);
