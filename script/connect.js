@@ -234,7 +234,7 @@ JOIN
     }
 
     EmployeeAdd(values){
-        Util.Log('values', values);
+        //Util.Log('values', values);
         if(values.addEmployeeManager != null && values.addEmployeeManager != undefined){
             const managerQuery = `
                 SELECT 
@@ -253,7 +253,7 @@ JOIN
             this.#connection.query(
                 managerQuery,
                 (err, results, fields)=> {
-                    Util.Log('results', results);
+                    //Util.Log('results', results);
                     //Util.Log('err', err);
                     values.addEmployeeManager = results[0].employee_id;
                     //Util.Log('values', values);
@@ -272,7 +272,7 @@ JOIN
                                 "${values.addEmployeeRole}",
                                 ${values.addEmployeeManager}
                             );`
-                    Util.Log('');
+                    //Util.Log('');
                     this.#connection.query(
                         insertQuery,
                         (err, results, fields) => {

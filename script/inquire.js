@@ -60,7 +60,7 @@ class Inquire {
     }
 
     departmentPrompts(root) {
-        Util.Log('departmentPrompts(root)');
+        //Util.Log('departmentPrompts(root)');
         if(root.includes("View")){
             this.db.DepartmentView('');
             this.resetPrompts();

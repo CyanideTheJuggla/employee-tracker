@@ -29,7 +29,7 @@ const db = new DatabaseConnection();
 
 function Startup(){
     console.clear();
-    Util.Log('process.pid', process.pid, true);
+    //Util.Log('process.pid', process.pid, true);
     console.log(logo);
     db.Connect();
     const inquire = new Inquire(db);
@@ -39,6 +39,7 @@ function Startup(){
 function ShutDown() {
     Util.Log("Goodbye!")
     db.Disconnect();
+    console.clear();
     process.exitCode = 1;
     process.kill(process.pid);
 }
